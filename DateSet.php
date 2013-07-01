@@ -4,6 +4,14 @@ require_once 'DateRange.php';
 
 class DateSet
 {
+  const SORT_INSERTION = "insertion";
+  const SORT_START_ASC = "start";
+  const SORT_START_DESC = "trats";
+  const SORT_END_ASC = "end";
+  const SORT_END_DESC = "dne";
+  const SORT_DATA_ASC = "data";
+  const SORT_DATA_DESC = "atad";
+  
   private $dateRanges = array();
   
   public function __construct()

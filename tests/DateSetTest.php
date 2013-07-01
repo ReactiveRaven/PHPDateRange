@@ -116,17 +116,17 @@ class DateSetTest extends PHPUnit_Framework_TestCase
       "Precise Pangolin"
     );
     
-    $this->assertEquals(join("|", $set->getDateRangesData()), join("|", $ubuntuStrings), "Expect in insertion order by default");
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_INSERTION)), join("|", $ubuntuStrings), "Expect in insertion order by default");
+    $this->assertEquals(join("\n", $set->getDateRangesData()), join("\n", $ubuntuStrings), "Expect in insertion order by default");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_INSERTION)), join("\n", $ubuntuStrings), "Expect in insertion order by default");
     
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_START_ASC)), join("|", $sortedUbuntuStrings), "Expect in SORT_START_ASC when requested");
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_START_DESC)), join("|", array_reverse($sortedUbuntuStrings)), "Expect in SORT_START_DESC when requested");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_START_ASC)), join("\n", $sortedUbuntuStrings), "Expect in SORT_START_ASC when requested");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_START_DESC)), join("\n", array_reverse($sortedUbuntuStrings)), "Expect in SORT_START_DESC when requested");
     
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_END_ASC)), join("|", $ubuntuStringsEndOrder), "Expect in SORT_END_ASC when requested");
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_END_DESC)), join("|", array_reverse($ubuntuStringsEndOrder)), "Expect in SORT_END_DESC when requested");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_END_ASC)), join("\n", $ubuntuStringsEndOrder), "Expect in SORT_END_ASC when requested");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_END_DESC)), join("\n", array_reverse($ubuntuStringsEndOrder)), "Expect in SORT_END_DESC when requested");
     
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_DATA_ASC)), join("|", $sortedUbuntuStrings), "Expect in SORT_DATA_ASC when requested");
-    $this->assertEquals(join("|", $set->getDateRangesData(DateSet::SORT_DATA_DESC)), join("|", array_reverse($sortedUbuntuStrings)), "Expect in SORT_DATA_DESC when requested");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_DATA_ASC)), join("\n", $sortedUbuntuStrings), "Expect in SORT_DATA_ASC when requested");
+    $this->assertEquals(join("\n", $set->getDateRangesData(DateSet::SORT_DATA_DESC)), join("\n", array_reverse($sortedUbuntuStrings)), "Expect in SORT_DATA_DESC when requested");
     
   }
 }
